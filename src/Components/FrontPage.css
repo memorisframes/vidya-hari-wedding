@@ -5,36 +5,43 @@
   height: 100dvh;
   width: 100%;
   overflow: hidden;
+  perspective: 1500px;
 }
 
+/* Left door */
 .first-half {
-  height: 100vh;
+  height: 100%;
   width: 50%;
-  background-color: #ffffff;
-
+  flex-shrink: 0;
+  background-color: #76aaa7;
   box-shadow: 40px 0 38px rgba(0, 0, 0, 0.18);
 
   position: relative;
   z-index: 3;
+
+  transform-origin: left center;
+  transition: transform 1.5s ease-in-out;
+  backface-visibility: hidden;
+  cursor: pointer;
 }
 
+/* Right door */
 .second-half {
-  height: 100vh;
+  height: 100%;
   width: 50%;
-  background-color: #ffffff;
+  flex-shrink: 0;
+  background-color: #75c6c2;
 
   position: relative;
   z-index: 1;
+
+  transform-origin: right center;
+  transition: transform 2s ease-in-out;
+  backface-visibility: hidden;
+  cursor: pointer;
 }
 
 /* Flower */
-.second-half {
-  position: relative;
-  height: 100%;
-  width: 50%;
-  background-color: #ffffff;
-}
-
 .flower {
   position: absolute;
   left: 0;
@@ -43,6 +50,7 @@
   height: 100%;
   object-fit: contain;
   z-index: 2;
+  pointer-events: none;
 }
 
 /* Wax seal */
@@ -53,4 +61,35 @@
   top: 50%;
   transform: translate(-50%, -50%);
   z-index: 10;
+  cursor: pointer;
+  transition: opacity 0.5s ease;
+}
+
+/* Open the doors */
+.front-page.open .first-half {
+  transform: rotateY(-110deg);
+}
+
+.front-page.open .second-half {
+  transform: rotateY(110deg);
+}
+
+/* Hide the wax seal */
+.front-page.open .wax-seal {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Keep the doors above the inner page */
+.first-half {
+  z-index: 3;
+}
+
+.second-half {
+  z-index: 2;
+}
+
+/* Keep the wax seal above the doors */
+.wax-seal {
+  z-index: 9;
 }
