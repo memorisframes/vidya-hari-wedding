@@ -15,20 +15,15 @@ function FrontPage() {
       </div>
 
       {/* Left door */}
-      <div className="first-half" onTouchStart={() => setIsOpen(true)} />
+
+      <div className="first-half" onClick={() => setIsOpen(true)}>
+        <img src={waxSeal} alt="Wax seal" className="wax-seal" />
+      </div>
 
       {/* Right door */}
       <div className="second-half" onTouchStart={() => setIsOpen(true)}>
         <img src={flower} alt="" className="flower" />
       </div>
-
-      {/* Wax seal */}
-      <img
-        src={waxSeal}
-        alt="Wax seal"
-        className="wax-seal"
-        onTouchStart={() => setIsOpen(true)}
-      />
     </div>
   );
 }

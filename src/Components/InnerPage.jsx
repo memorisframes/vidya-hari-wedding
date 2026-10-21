@@ -1,5 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import temple from "../assets/temple.svg";
 import "./InnerPage.css";
 
 function CountdownTimer() {
@@ -93,19 +94,43 @@ function InnerPage() {
           <span className="divider-line"></span>
         </div>
         <div className="location-details">
-          <h2>Venue</h2>
-          <p>
-            The Grand Palace, <br />
-            123 Celebration Avenue, <br />
-            Cityville, State, Country
+          <img src={temple} alt="Temple" className="temple-icon" />
+
+          <p>11:00 AM - 11:30 AM</p>
+          <p className="location-name">
+            Chunakkara Thiruvairoor <br />
+            Mahadeva Temple
           </p>
+          <button
+            onClick={() =>
+              window.open("https://maps.app.goo.gl/ThMUbyEEFVud95759", "_blank")
+            }
+          >
+            Get Direction
+          </button>
         </div>
+        <p className="closing-message">
+          We Look Forward to Celebrating With You
+        </p>
       </section>
 
       {/* Third section: Family message or venue */}
       <section className="invitation-section closing-section">
-        <h2>We Look Forward to Celebrating With You</h2>
-        <p>Your presence will make our day even more special.</p>
+        <footer className="copyright">
+          <span className="copyright-line"></span>
+          <span className="copyright-text">
+            Crafted by{" "}
+            <a
+              href="https://surajsooraj26.github.io/portfolio/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Visit surajsooraj26's portfolio"
+            >
+              surajsooraj26 <span className="copyright-arrow">↗</span>
+            </a>
+          </span>
+          <span className="copyright-year">© 2026</span>
+        </footer>
       </section>
     </div>
   );

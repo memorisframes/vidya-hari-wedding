@@ -54,15 +54,29 @@
 }
 
 /* Wax seal */
+/* Wax seal */
 .wax-seal {
   position: absolute;
   width: 120px;
-  left: 50%;
+  left: 100%;
   top: 50%;
   transform: translate(-50%, -50%);
-  z-index: 10;
+  transform-origin: left center;
+  z-index: 4;
   cursor: pointer;
-  transition: opacity 0.5s ease;
+
+  transition:
+    transform 1.5s ease-in-out,
+    opacity 0.4s ease 0.8s;
+
+  backface-visibility: hidden;
+}
+
+/* Seal follows the left door as it opens */
+.front-page.open .wax-seal {
+  transform: translate(-50%, -50%) rotateY(-110deg);
+  opacity: 0;
+  pointer-events: none;
 }
 
 /* Open the doors */
@@ -72,12 +86,6 @@
 
 .front-page.open .second-half {
   transform: rotateY(110deg);
-}
-
-/* Hide the wax seal */
-.front-page.open .wax-seal {
-  opacity: 0;
-  pointer-events: none;
 }
 
 /* Keep the doors above the inner page */
@@ -91,5 +99,5 @@
 
 /* Keep the wax seal above the doors */
 .wax-seal {
-  z-index: 9;
+  z-index: 4;
 }
