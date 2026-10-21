@@ -33,7 +33,9 @@
 
 /* Mirror text effect */
 .fx-mirror {
-  font-family: "Georgia", serif;
+  font-family:
+    Apple Chancery,
+    cursive;
   font-size: clamp(20px, 5vw, 48px);
   font-weight: 600;
   letter-spacing: 0.08em;
