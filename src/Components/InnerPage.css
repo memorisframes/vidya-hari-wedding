@@ -175,7 +175,6 @@
 /* Third screen: closing message */
 .closing-section {
   min-height: 10vh;
-  background-image: url("../assets/closing-bg.png");
   background-position: center;
   background-color: #f8eef5;
 
